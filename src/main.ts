@@ -11,7 +11,7 @@ if (environment.production) {
 }
 
 const bootstrap = () => platformBrowserDynamic().bootstrapModule(AppModule, {
-    defaultEncapsulation: ViewEncapsulation.Native
+    defaultEncapsulation: ViewEncapsulation.ShadowDom
 });
 
 if (environment.hmr) {

@@ -16,7 +16,7 @@ import { PizzaDashboardModule } from './pizza-dashboard/pizza-dashboard.module';
     CoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
+    CoreModule,
     PizzaDashboardModule,
     MatSidenavModule,
   ],

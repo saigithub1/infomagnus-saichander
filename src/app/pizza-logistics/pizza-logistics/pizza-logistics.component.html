@@ -1,0 +1,47 @@
+
+<mat-card >
+    <mat-card-title>
+        New Order
+    </mat-card-title>
+
+    <mat-card-content>
+
+            <mat-form-field class="example-full-width">
+                <label>Customer Name</label>
+                <input [(ngModel)]="customerName"  required matInput style="border: slategrey 1px solid;
+                padding: 1rem; line-height: 1.5; border-radius: .3rem; "  >
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <label>Toppings</label>
+                <mat-select [(ngModel)]="toppings" required multiple style="border: slategrey 1px solid;
+                padding: 1rem; line-height: 1.5; border-radius: .3rem; ">
+                    <mat-option *ngFor="let topping of toppingList$ | async" [value]="topping.id">{{topping.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <label>Size</label>
+                <mat-select [(ngModel)]="selectedPizzaSize" required style="border: slategrey 1px solid;
+                padding: 1rem; line-height: 1.5; border-radius: .3rem; ">
+                    <mat-option *ngFor="let size of pizzaSize" [value]="size.id">{{size.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        <div style="text-align: right">
+            <button mat-button style="background: orange" type="button" (click)="onSubmit()">Place Order</button>
+        </div>
+
+    </mat-card-content>
+</mat-card>
+<div *ngIf="(ordersList$ | async).length > 0">
+<mat-card >
+    <app-pizza-neworderedlist [newOrderedList$]="ordersList$" ></app-pizza-neworderedlist>
+</mat-card>
+
+
+<mat-card>
+    <app-pizza-readyfordelivery [readyForDeliveryList$]="ordersList$"></app-pizza-readyfordelivery>
+</mat-card>
+    <mat-card>
+        <app-pizza-delivered [deliveredList$]="ordersList$"></app-pizza-delivered>
+    </mat-card>
+</div>

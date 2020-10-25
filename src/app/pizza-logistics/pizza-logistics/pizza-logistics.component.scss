@@ -2,4 +2,36 @@
   .mat-card-title {
     background: orange;
   }
+  mat-card {
+    border: 1px solid;
+    margin: 1em;
+  }
+}
+
+
+.example-form {
+  min-width: 150px;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.example-full-width {
+  padding: 1em;
+  width: 25%;
+}
+
+.buttonsize {
+  top: 1em;
+}
+
+table {
+  width: 100%;
+}
+
+.textbox {
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: .3rem;
 }

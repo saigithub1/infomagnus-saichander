@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'logistics',
     loadChildren: () => import('../pizza-logistics/pizza-logistics.module').then(m => m.PizzaLogisticsModule)
+  },
+  {
+    path: 'reports',
+    loadChildren: () => import('../pizza-reports/pizza-reports.module').then(m => m.PizzaReportsModule)
   }
 ];
 
